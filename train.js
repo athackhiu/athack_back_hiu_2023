@@ -3,6 +3,7 @@ const { NlpManager } = require("node-nlp");
 const languages = ["fr", "en"];
 const manager = new NlpManager({ languages: ["fr", "en"] });
 const fs = require("fs");
+var path = require('path')
 languages.forEach((language) => {
   const files = fs.readdirSync(`./intents/${language}`);
   for (const file of files) {
@@ -27,7 +28,7 @@ languages.forEach((language) => {
 
 const train_save = async () => {
   await manager.train();
-  manager.save(`${__dirname}/routes/data/model.nlp`);
+  manager.save(path.join(__dirname, "datas","model.nlp"));
 };
 
 train_save();

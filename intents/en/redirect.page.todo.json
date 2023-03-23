@@ -8,5 +8,5 @@
     "redirect me to to do list",
     "redirect me to to dolist"
   ],
-  "answers": ["{\"redirect\": \"/apps/todo\"}"]
+  "answers": ["{\"redirect\": \"/apps/todo\", \"redirect_page_title\":\"Todo list\"}"]
 }

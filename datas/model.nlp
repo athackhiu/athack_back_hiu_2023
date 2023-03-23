@@ -9756,17 +9756,17 @@
         ],
         "redirect.allPages": [
           {
-            "answer": "Les pages disponibles sont : [ liste de tâches : /apps/todo , calendrier : /apps/calendar ]"
+            "answer": "Les pages disponibles sont : liste de tâches, calendrier"
           }
         ],
         "redirect.page.calendar": [
           {
-            "answer": "{\"redirect\": \"/apps/calendar\"}"
+            "answer": "{\"redirect\": \"/apps/todo\", \"redirect_page_title\":\"Calenrier\"}"
           }
         ],
         "redirect.page.todo": [
           {
-            "answer": "{\"redirect\": \"/apps/todo\"}"
+            "answer": "{\"redirect\": \"/apps/todo\", \"redirect_page_title\":\"Todo list\"}"
           }
         ],
         "redirect.randomPage": [
@@ -9925,17 +9925,17 @@
         ],
         "redirect.allPages": [
           {
-            "answer": "The available pages are : [ todo list : /apps/todo , calendar : /apps/calendar ]"
+            "answer": "The available pages are : todo list , calendar"
           }
         ],
         "redirect.page.calendar": [
           {
-            "answer": "{\"redirect\": \"/apps/calendar\"}"
+            "answer": "{\"redirect\": \"/apps/calendar\",\"redirect_page_title\":\"Calendar\"}"
           }
         ],
         "redirect.page.todo": [
           {
-            "answer": "{\"redirect\": \"/apps/todo\"}"
+            "answer": "{\"redirect\": \"/apps/todo\", \"redirect_page_title\":\"Todo list\"}"
           }
         ],
         "redirect.randomPage": [

@@ -23,7 +23,7 @@ router.post("/chat", async (req, res) => {
   try{
     response_formatted = {
       json: JSON.parse(response_formatted.text),
-      text: language === "fr" ? `Redirection vers ${JSON.parse(response_formatted.text).redirect}` : `Redirecting to ${JSON.parse(response_formatted.text).redirect}`
+      text: language === "fr" ? `Redirection vers ${JSON.parse(response_formatted.text).redirect_page_title}` : `Redirecting to ${JSON.parse(response_formatted.text).redirect_page_title}`
     }
   }catch(err){
     console.log(response_formatted.text)

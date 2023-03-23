@@ -2,5 +2,5 @@
   "questions": [
     "redirige-moi vers le calendrier"
   ],
-  "answers": ["{\"redirect\": \"/apps/calendar\"}"]
+  "answers": ["{\"redirect\": \"/apps/todo\", \"redirect_page_title\":\"Calenrier\"}"]
 }

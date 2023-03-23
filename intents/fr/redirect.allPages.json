@@ -1,6 +1,6 @@
 {
     "answers": [
-        "Les pages disponibles sont : [ liste de tâches : /apps/todo , calendrier : /apps/calendar ]"
+        "Les pages disponibles sont : liste de tâches, calendrier"
     ],
     "questions": [
         "Montrez-moi une liste de pages",

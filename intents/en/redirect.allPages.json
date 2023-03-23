@@ -7,6 +7,6 @@
         "Give me a list of all the pages"
     ],
     "answers":[
-        "The available pages are : [ todo list : /apps/todo , calendar : /apps/calendar ]"
+        "The available pages are : todo list , calendar"
     ]
 }

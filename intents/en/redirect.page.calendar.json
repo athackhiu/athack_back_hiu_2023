@@ -3,5 +3,5 @@
     "redirect me to calendar page",
     "redirect me to calendar page"
   ],
-  "answers": ["{\"redirect\": \"/apps/calendar\"}"]
+  "answers": ["{\"redirect\": \"/apps/calendar\",\"redirect_page_title\":\"Calendar\"}"]
 }

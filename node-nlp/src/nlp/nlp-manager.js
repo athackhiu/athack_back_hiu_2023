@@ -252,6 +252,7 @@ class NlpManager {
    */
   save(srcFileName, minified = false) {
     const fileName = srcFileName || 'model.json';
+    
     fs.writeFileSync(fileName, this.export(minified), 'utf8');
   }
 
@@ -260,8 +261,9 @@ class NlpManager {
    * @param {String} srcFilename Filename for loading the NLP manager.
    */
   load(srcFileName) {
-    const fileName = srcFileName || 'model.json';
-    const data = fs.readFileSync(fileName, 'utf8');
+    const path = require('path');
+    const filePath = path.join(__dirname, 'data', 'model.json');
+    const data = fs.readFileSync(filePath, 'utf8');
     this.import(data);
   }
 

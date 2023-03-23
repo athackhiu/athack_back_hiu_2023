@@ -1,5 +1,5 @@
 // Let's start with importing `NlpManager` from `node-nlp`. This will be responsible for training, saving, loading and processing.
-const { NlpManager } = require("node-nlp");
+const { NlpManager } = require("./node-nlp/src");
 const languages = ["fr", "en"];
 const manager = new NlpManager({ languages: ["fr", "en"] });
 const fs = require("fs");

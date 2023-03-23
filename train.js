@@ -27,7 +27,7 @@ languages.forEach((language) => {
 
 const train_save = async () => {
   await manager.train();
-  manager.save("./data/model.nlp");
+  manager.save(`${__dirname}/routes/data/model.nlp`);
 };
 
 train_save();

@@ -21,6 +21,15 @@
   "homepage": "https://github.com/tsantaniainarakotonjanahary/BibliothequeMedicalBack#readme",
   "dependencies": {
     "@google-cloud/storage": "^6.9.1",
+    "@nlpjs/builtin-duckling": "^4.26.1",
+    "@nlpjs/builtin-microsoft": "^4.26.1",
+    "@nlpjs/core-loader": "^4.26.1",
+    "@nlpjs/emoji": "^4.26.1",
+    "@nlpjs/evaluator": "^4.26.1",
+    "@nlpjs/lang-all": "^4.26.1",
+    "@nlpjs/language": "^4.25.0",
+    "@nlpjs/nlp": "^4.26.1",
+    "@nlpjs/xtables": "^4.25.0",
     "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "~1.4.4",
@@ -44,7 +53,6 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
     "node-fetch": "^3.3.0",
-    "node-nlp": "^4.26.1",
     "nodemailer": "^6.9.0",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.21"

@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const auth = require("../authentification/auth");
-const { NlpManager } = require("node-nlp");
+const { NlpManager } = require("../node-nlp/src");
 const BOT_NAME = "Lily";
 
 router.get("/", auth, function (req, res, next) {

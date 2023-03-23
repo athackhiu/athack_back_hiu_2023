@@ -1,5 +1,5 @@
 // Let's start with importing `NlpManager` from `node-nlp`. This will be responsible for training, saving, loading and processing.
-const { NlpManager } = require("./node-nlp/src");
+const { NlpManager } = require("node-nlp");
 const languages = ["fr", "en"];
 const manager = new NlpManager({ languages: ["fr", "en"] });
 const fs = require("fs");
@@ -27,7 +27,7 @@ languages.forEach((language) => {
 
 const train_save = async () => {
   await manager.train();
-  manager.save();
+  manager.save("./data/model.nlp");
 };
 
 train_save();

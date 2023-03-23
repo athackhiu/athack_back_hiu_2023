@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const auth = require("../authentification/auth");
-const { NlpManager } = require("../node-nlp/src");
+const { NlpManager } = require("node-nlp");
 const BOT_NAME = "Lily";
 
 router.get("/", auth, function (req, res, next) {
@@ -14,7 +14,7 @@ router.post("/chat", async (req, res) => {
   const manager = new NlpManager({ languages: ["en", "fr"] });
   let regex_lang_fr = /.*fr.*/
   language = regex_lang_fr.test(language) ? "fr" : "en"
-  manager.load();
+  manager.load(`./data/model.nlp`);
   const response = await manager.process(language, question);
   const no_response = language === "fr" ? "Je suis désolé mais je ne comprend pas ce que vous voulez dire" : "Sorry but I don't understand what you are trying to say."
   let response_formatted = {

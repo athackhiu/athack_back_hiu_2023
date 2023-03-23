@@ -1,8 +1,8 @@
 {
-    "answers": [
-        "Les pages disponibles sont : [ liste de tâches : /apps/todo , calendrier : /apps/calendar ]"
-    ],
     "questions": [
         "redirige moi vers la page"
+    ],
+    "answers": [
+        "Les pages disponibles sont : liste de tâches, calendrier"
     ]
 }

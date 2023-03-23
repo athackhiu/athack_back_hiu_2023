@@ -3,6 +3,6 @@
         "redirect me to page"
     ],
     "answers":[
-        "The available pages are : [ todo list : /apps/todo , calendar : /apps/calendar ]"
+        "The available pages are : todo list , calendar"
     ]
 }

@@ -9756,7 +9756,7 @@
         ],
         "redirect.allPages": [
           {
-            "answer": "Les pages disponibles sont : liste de tâches, calendrier"
+            "answer": "Les pages disponibles sont : Liste de tâches, calendrier"
           }
         ],
         "redirect.page.calendar": [
@@ -9771,7 +9771,7 @@
         ],
         "redirect.randomPage": [
           {
-            "answer": "Les pages disponibles sont : [ liste de tâches : /apps/todo , calendrier : /apps/calendar ]"
+            "answer": "Les pages disponibles sont : liste de tâches, calendrier"
           }
         ],
         "requests.i_need_you": [
@@ -9940,7 +9940,7 @@
         ],
         "redirect.randomPage": [
           {
-            "answer": "The available pages are : [ todo list : /apps/todo , calendar : /apps/calendar ]"
+            "answer": "The available pages are : todo list , calendar"
           }
         ],
         "requests.i_need_you": [

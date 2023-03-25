@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) { res.send('Facture'); });
+var factureController =  require('../controller/FactureController');
+
+router.get('/', factureController.getFacture);
+
+router.post('/add', factureController.addFacture);
 
 module.exports = router;

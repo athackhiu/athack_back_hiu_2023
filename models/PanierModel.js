@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 const PanierProduitSchema = {
     produit: {
         type: {
@@ -7,31 +8,28 @@ const PanierProduitSchema = {
                 required: true
             },
             nom:{
-                type: string,
+                type: String,
                 default: 'produit x'
             },
             prix:{
-                type: number,
+                type: Number,
                 default: 0
             },
         },
         required: true
     },
     quantite: {
-        type: number,
+        type: Number,
         required: true,
         default: 0
     }
 }
+
 const PanierSchema = new mongoose.Schema({
     date:{
         type: Date,
         required:true,
         default: Date.now
-    },
-    estConfirme:{
-        type: Boolean,
-        required: true,
     },
     panierProduit: {
         type: [PanierProduitSchema],

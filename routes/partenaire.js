@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) { res.send('Partenaire'); });
+var partenaireController =  require('../controller/PartenaireController');
+
+router.get('/', partenaireController.getPartenaire);
+
+router.post('/add', partenaireController.addPartenaire);
 
 module.exports = router;

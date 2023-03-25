@@ -15,7 +15,7 @@ const PanierProduitSchema = {
                 default: 0
             },
         },
-        requiered: true
+        required: true
     },
     quantite: {
         type: number,

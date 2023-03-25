@@ -6,6 +6,7 @@ const connectDB = require('./db/connection')
 connectDB()
 
 var indexRouter = require('./routes/index');
+var tokenRouter = require('./routes/token');
 var userRouter = require('./routes/user');
 var lilibotRouter = require('./routes/lilibot');
 const produitRouter = require('./routes/produit')
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
+app.use('/token', tokenRouter);
 app.use('/user', userRouter);
 app.use('/chatbot', lilibotRouter);
 app.use('/produits', produitRouter);

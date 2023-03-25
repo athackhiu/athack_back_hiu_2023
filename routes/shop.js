@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var shopController =  require('../controller/ShopController');
 
-router.get('/', function(req, res, next) { res.send('Shop'); });
+router.get('/', shopController.getShops);
+router.post('/add', shopController.addShops);
+
+
 
 module.exports = router;

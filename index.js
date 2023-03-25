@@ -6,10 +6,15 @@ const connectDB = require('./db/connection')
 connectDB()
 
 var indexRouter = require('./routes/index');
-
 var userRouter = require('./routes/user');
-
 var lilibotRouter = require('./routes/lilibot');
+const produitRouter = require('./routes/produit')
+const panierRouter = require('./routes/panier')
+const shopRouter = require('./routes/shop');
+const serviceClientRouter = require('./routes/serviceClient')
+const cagnotteRouter = require('./routes/cagnotte')
+const partenaireRouter = require('./routes/partenaire')
+const factureRouter = require('./routes/facture')
 
 const cors = require('cors');
 var app = express();
@@ -24,7 +29,13 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/chatbot', lilibotRouter);
-
+app.use('/produits', produitRouter);
+app.use('/paniers', panierRouter);
+app.use('/shops', shopRouter);
+app.use('/serviceClients', serviceClientRouter);
+app.use('/cagnottes', cagnotteRouter);
+app.use('/partenaires', partenaireRouter);
+app.use('/factures', factureRouter);
 
 app.use(function(req, res, next) { next(createError(404)); });
 app.use(function(err, req, res, next) 

@@ -6,8 +6,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const auth = require('../authentification/auth');
+const userController = require('../controller/UserController')
 
-router.get('/', auth , function(req, res, next) { res.send('USER'); });
+router.get('/', userController.getUtilisateurs);
 
 router.post('/login', async (req, res) => {
     const email = req.body.email;

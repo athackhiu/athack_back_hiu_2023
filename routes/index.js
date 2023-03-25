@@ -15,17 +15,17 @@ var router = express.Router();
 //   },
 //   data : data
 // };
+var JSEncrypt = require('node-jsencrypt')
 
+var plaintext = '4321';
+var pubilc_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCkq3XbDI1s8Lu7SpUBP+bqOs/MC6PKWz6n/0UkqTiOZqKqaoZClI3BUDTrSIJsrN1Qx7ivBzsaAYfsB0CygSSWay4iyUcnMVEDrNVOJwtWvHxpyWJC5RfKBrweW9b8klFa/CfKRtkK730apy0Kxjg+7fF0tB4O3Ic9Gxuv4pFkbQIDAQAB";
+var encrypt = new JSEncrypt();
+encrypt.setPublicKey(pubilc_key);
+var encrypted = encrypt.encrypt(plaintext); 
 router.get('/', function(req, res, next) { 
-    // axios(config)
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-    // res.send('BIENVENU');
-    res.send('Bienvenu')
+    console.log(encrypted)
+    // res.send('Bienvenu')
+    res.json(encrypted)
 });
 
 module.exports = router;

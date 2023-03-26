@@ -7,6 +7,6 @@
         "Give me a list of all the pages"
     ],
     "answers":[
-        "The available pages are : todo list , calendar"
+        "The available pages are : todo list , calendar, produit, service, partenaires, payment, profile"
     ]
 }

@@ -7,6 +7,6 @@
         "Donnez-moi une liste de toutes les pages"
     ],
     "answers": [
-        "Les pages disponibles sont : Liste de tâches, calendrier"
+        "Les pages disponibles sont : todo list , calendar, produit, service, partenaires, paiement , profile"
     ]
 }

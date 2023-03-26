@@ -26,6 +26,10 @@ const PanierProduitSchema = {
 }
 
 const PanierSchema = new mongoose.Schema({
+    id_user:{
+        type: mongoose.Types.ObjectId,
+        required: true
+    },
     date:{
         type: Date,
         required:true,

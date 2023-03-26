@@ -9,7 +9,23 @@ const getPanier = async (req, res, next) => {
     throw err.message;
   }
 };
-
+const getUserPanier = async (req, res, next) => {
+  try{
+    const panierUser = await PanierModel.findOne({
+      id_user: req.user.id
+    })
+    if(panierUser === null){
+      return res.status(404).json({
+        "error": "Product not found"
+      })
+    }
+    return res.json(panierUser)
+  }catch(err){
+    res.status(400).json({
+      "error": err
+    })
+  }
+}
 const ajouterAuPanier = async (panierId, produit, quantite = 1) => {
   const panier = await PanierModel.findById(panierId);
   const produitExistant = panier.panierProduit.find((item) => item.produit._id.toString() === produit._id.toString());
@@ -32,4 +48,4 @@ const addPanier = async (req, res, next) => {
   }
 };
 
-module.exports = { getPanier, addPanier };
+module.exports = { getPanier, getUserPanier, addPanier };

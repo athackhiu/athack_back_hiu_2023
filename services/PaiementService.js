@@ -2,8 +2,9 @@ const { v4: uuidv4 } = require("uuid");
 const { PHONE_NUMBER, AIRTEL_API_URL } = require("../config");
 const tokenService = require("./TokenService");
 var axios = require("axios");
+const HistoriqueAchat = require("../models/HistoriqueAchat");
 
-const pay = async ({ amount, recipient_number, reference }) => {
+const pay = async ({ amount, recipient_number, reference, user_id }) => {
   reference = reference || "AirtelXPerience";
   recipient_number = recipient_number || `${PHONE_NUMBER}`;
   if (!amount) {
@@ -47,12 +48,33 @@ const pay = async ({ amount, recipient_number, reference }) => {
   const resultCode = paiementResultData.status.result_code;
 
   if (statusCode === "200") {
+    try {
+      const historique = new HistoriqueAchat({
+        id_user: user_id,
+        montant: amount,
+        is_success: true,
+      });
+      await historique.save();
+    } catch (err) {
+      const historique = new HistoriqueAchat({
+        id_user: user_id,
+        montant: amount,
+        is_success: false,
+      });
+      await historique.save();
+    }
     return {
       amount: amount,
       transaction_id: uniqueId,
       result_code: resultCode,
     };
   } else {
+    const historique = new HistoriqueAchat({
+      id_user: user_id,
+      montant: amount,
+      is_success: false,
+    });
+    await historique.save();
     throw Error(`Paiement has failed.`);
   }
 };

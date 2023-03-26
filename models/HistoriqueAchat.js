@@ -1,9 +1,21 @@
 const mongoose = require('mongoose')
 
 const HistoriqueAchatSchema = new mongoose.Schema({
-    nom:{
-        type:String,
-        required:true
+    id_user:{
+        type : mongoose.Types.ObjectId,
+        required: true
+    },
+    date: {
+        type: Date,
+        default : Date.now
+    },
+    montant: {
+        type: Number,
+        required: true
+    },
+    is_success: {
+        type: Boolean,
+        required: true
     }
 },{collection:'historiqueAchat'})
 

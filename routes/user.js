@@ -7,8 +7,10 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const auth = require('../authentification/auth');
 const userController = require('../controller/UserController')
-
+const historiqueController = require('../controller/HistoriqueAchatController')
 router.get('/', userController.getUtilisateurs);
+
+router.get('/transactions',auth, historiqueController.getHistorique );
 
 router.post('/login', async (req, res) => {
     const email = req.body.email;

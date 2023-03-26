@@ -10647,7 +10647,7 @@
         ],
         "redirect.allPages": [
           {
-            "answer": "Les pages disponibles sont : todo list , calendar, produit, service, partenaires, paiement , profile"
+            "answer": "Les pages disponibles sont : produit, service, partenaires, paiement , profile"
           }
         ],
         "redirect.page.calendar": [
@@ -10672,7 +10672,7 @@
         ],
         "redirect.randomPage": [
           {
-            "answer": "Les pages disponibles sont : liste de tâches, calendrier"
+            "answer": "Les pages disponibles sont : produit, service, partenaires, paiement , profile"
           }
         ],
         "requests.i_need_you": [

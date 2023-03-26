@@ -20,6 +20,8 @@ const auth = require('../authentification/auth')
 // });
 router.get('/',auth, panierController.getUserPanier)
 
+router.get('/validate',auth, panierController.validateUserPanier)
+
 router.post('/add', panierController.addPanier);
 
 module.exports = router;

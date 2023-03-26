@@ -54,5 +54,24 @@ const addPanier = async (req, res, next) => {
     });
   }
 };
-
-module.exports = { getPanier, getUserPanier, addPanier };
+const validateUserPanier = async (req, res, next) => {
+  try {
+    const user_id = req.user.id;
+    const panier_user = await PanierModel.findOne({
+      id_user: user_id,
+    });
+    if (panier_user) {
+      panier_user.panierProduit = [];
+      panier_user.save();
+      return res.json({
+        message: `Panier confirmé avec succès`,
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({
+      error: "Impossible de confirmer le panier",
+    });
+  }
+};
+module.exports = { getPanier, getUserPanier, addPanier, validateUserPanier };

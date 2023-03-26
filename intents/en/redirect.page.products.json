@@ -1,9 +1,10 @@
 {
-  "questions": [
-    "Qui est Ericka",
-    "Qui est Ericka bordel",
-    "Qu'est-ce qu'Ericka",
-    "Ericka"
-  ],
-  "answers": ["Ericka est un développeur full stack"]
-}
+    "questions": [
+      "Redirect me to products page",
+      "Redirect me to products and services page",
+      "Redirect me to services page",
+      "Redirect me to service page"
+    ],
+    "answers": ["{\"redirect\": \"/apps/ecommerce/shop\",\"redirect_page_title\":\"Products and services\"}"]
+  }
+  

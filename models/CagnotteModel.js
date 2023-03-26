@@ -41,7 +41,7 @@ const CagnotteSchema = new mongoose.Schema({
     },
     estValide:{
         type: Boolean,
-        default: True
+        default: true
     }
 },{collection:'cagnotte'})
 

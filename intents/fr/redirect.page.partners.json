@@ -1,7 +1,7 @@
 {
     "questions": [
-      "redirige-moi vers la page des partenaires",
-      "Conduits-moi vers la page des partenaires"
+      "redirige moi vers la page des partenaires",
+      "Conduits moi vers la page des partenaires"
     ],
     "answers": ["{\"redirect\": \"/user/partenaire\",\"redirect_page_title\":\"Partenaires\"}"]
   }

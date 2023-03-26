@@ -15,6 +15,10 @@ const PanierProduitSchema = {
                 type: Number,
                 default: 0
             },
+            image:{
+                type: String,
+                required: true
+            }
         },
         required: true
     },

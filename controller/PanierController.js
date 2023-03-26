@@ -1,5 +1,6 @@
 const PanierModel = require("../models/PanierModel");
 const mongoose = require("mongoose");
+const Produit = require("../models/ProduitModel");
 
 const getPanier = async (req, res, next) => {
   try {
@@ -10,25 +11,27 @@ const getPanier = async (req, res, next) => {
   }
 };
 const getUserPanier = async (req, res, next) => {
-  try{
+  try {
     const panierUser = await PanierModel.findOne({
-      id_user: req.user.id
-    })
-    if(panierUser === null){
+      id_user: req.user.id,
+    });
+    if (panierUser === null) {
       return res.status(404).json({
-        "error": "Product not found"
-      })
+        error: "Product not found",
+      });
     }
-    return res.json(panierUser)
-  }catch(err){
+    return res.json(panierUser);
+  } catch (err) {
     res.status(400).json({
-      "error": err
-    })
+      error: err,
+    });
   }
-}
+};
 const ajouterAuPanier = async (panierId, produit, quantite = 1) => {
   const panier = await PanierModel.findById(panierId);
-  const produitExistant = panier.panierProduit.find((item) => item.produit._id.toString() === produit._id.toString());
+  const produitExistant = panier.panierProduit.find(
+    (item) => item.produit._id.toString() === produit._id.toString()
+  );
   if (produitExistant) {
     produitExistant.quantite += quantite;
   } else {
@@ -40,11 +43,15 @@ const ajouterAuPanier = async (panierId, produit, quantite = 1) => {
 const addPanier = async (req, res, next) => {
   try {
     const { panierId, produit, quantite } = req.body;
-    await ajouterAuPanier(panierId, produit, quantite);
+    const produit_obj = await Produit.findById(produit);
+    await ajouterAuPanier(panierId, produit_obj, quantite);
     const updatedPanier = await PanierModel.findById(panierId);
     res.status(201).json(updatedPanier);
   } catch (err) {
-    throw err.message;
+    console.log(err);
+    res.status(400).json({
+      error: "Impossible d'ajouter au panier",
+    });
   }
 };
 

@@ -205,6 +205,19 @@ router.get('/all', async (req, res) => {
     }
 });
 
+router.get('/:idUser', async (req, res) => {
+    try {
+        const client = new MongoClient('mongodb+srv://tsanta:ETU001146@cluster0.6oftdrm.mongodb.net/?retryWrites=true&w=majority',{ useUnifiedTopology: true });
+        await client.connect();
+        const db = client.db("hiu");
+        const token = jwt.sign({ id: req.params.idUser }, "Tsanta", { expiresIn: 86400 });
+        res.status(200).json(token); 
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Erreur serveur' });
+    }
+});
+
 router.put('/validate/:idUser', auth ,  async (req, res) => {
 
         const idadmin = req.user.id;

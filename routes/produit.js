@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var produitController =  require('../controller/ProduitController');
 
-router.get('/', function(req, res, next) { res.send('Produit'); });
+router.get('/', produitController.getProduits);
+router.post('/add', produitController.addProduits);
+
+
 
 module.exports = router;
